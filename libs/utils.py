@@ -31,6 +31,12 @@ def mcol(array):
 def mrow(array):
     return array.reshape((1, array.shape[0]))
 
+def vrow(col):
+    return col.reshape((1,col.size))
+
+def vcol(row):
+    return row.reshape((row.size,1))
+
 def computeCovarianceMatrix(D):
     Dc = D - computeMean(D)
     return np.dot(Dc, Dc.T) / D.shape[1]
