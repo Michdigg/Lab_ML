@@ -19,7 +19,7 @@ def load(fName='Lab_ML/iris.csv'):
     return np.array(attributesMatrix).astype(np.float32).reshape((150,4)).T, np.array(labels, dtype=np.int32)
 
 def centerData(D):
-    mu = mcol(D.mean(1))
+    mu = vcol(D.mean(1))
     return D - mu
 
 def computeMean(D):
