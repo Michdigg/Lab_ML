@@ -2,7 +2,7 @@ import numpy
 import sys
 sys.path.insert(0, 'Lab_ML/libs')
 from gaussianClassification import gaussianParamsEstimator, gaussianLabelPredict, optimizedGaussianLabelPredict, naiveBayesGaussianParamsEstimator, tiedGaussianParamsEstimator, optimizedTiedGaussianLabelPredict, tiedNaiveBayesGaussianParamsEstimator
-from validationLib import leaveOneOutGaussianModels
+from validationLib import leaveOneOutGaussianModels, kfoldCrossValidationGaussianModels
 import sklearn.datasets as sk
 
 def load_iris():
@@ -87,5 +87,7 @@ if __name__ == "__main__":
     accuracy2, errRate2 = leaveOneOutGaussianModels(D, L, naiveBayesGaussianParamsEstimator, optimizedGaussianLabelPredict)
     accuracy3, errRate3 = leaveOneOutGaussianModels(D, L, tiedGaussianParamsEstimator, optimizedTiedGaussianLabelPredict)
     accuracy4, errRate4 = leaveOneOutGaussianModels(D, L, tiedNaiveBayesGaussianParamsEstimator, optimizedTiedGaussianLabelPredict)
+
+    accuracy5, errRate5 = kfoldCrossValidationGaussianModels(D, L, 14, tiedGaussianParamsEstimator, optimizedTiedGaussianLabelPredict)
 
     print('End of file')
