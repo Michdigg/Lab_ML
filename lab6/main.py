@@ -31,7 +31,5 @@ if __name__ == "__main__":
     scoresInf = numpy.array(scoresInf) * 1 / 3
     
     predictionsInf = numpy.argmax(scoresInf, axis=0)
-    predictionsPur = numpy.argmax(scoresPur, axis=0)
-    predictionsPar = numpy.argmax(scoresPar, axis=0)
 
     print('ciao')
